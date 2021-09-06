@@ -29,7 +29,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'apache-maven-3.8.1') {
-                    sh 'mvn deploy'
+                    bat 'mvn deploy'
                 }
             }
         }
