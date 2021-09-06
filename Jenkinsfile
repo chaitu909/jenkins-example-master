@@ -10,7 +10,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                maven(maven : 'apache-maven-3.8.1') {
+                withMaven(maven : 'apache-maven-3.8.1') {
                     sh 'mvn clean compile'
                 }
             }
@@ -19,7 +19,7 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                maven(maven : 'apache-maven-3.8.1') {
+                withMaven(maven : 'apache-maven-3.8.1') {
                     sh 'mvn test'
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                maven(maven : 'apache-maven-3.8.1') {
+                withMaven(maven : 'apache-maven-3.8.1') {
                     sh 'mvn deploy'
                 }
             }
